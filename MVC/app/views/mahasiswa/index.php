@@ -7,7 +7,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
             Tambah Data Mahasiswa
             </button>
             <br>
@@ -17,6 +17,7 @@
                 <li class="list-group-item ">
                     <?= $mhs['nama']; ?>
                     <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id'];?>" class="badge text-bg-danger link-underline link-underline-opacity-0 float-end ms-1" onclick="return confirm('yakin?')">hapus</a>
+                    <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id'];?>" class="badge text-bg-success link-underline link-underline-opacity-0 float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">ubah</a>
                     <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id'];?>" class="badge text-bg-primary link-underline link-underline-opacity-0 float-end ms-1">detail</a>
                 </li>
                 <?php endforeach; ?>
@@ -25,11 +26,11 @@
     </div>
 </div>
 
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="jduulModal" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="judulModal">Tambah Data Mahasiswa</h1>
+        <h1 class="modal-title fs-5" id="formModalLabel">Tambah Data Mahasiswa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
